@@ -1,0 +1,1450 @@
+// Mainīgie ar pielietotiem fontiem
+$font-text: "Inter";
+$font-title: "Manrope";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text {
+  font-family: $font-text;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.title {
+  font-family: $font-title;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &.modal-active {
+    overflow: hidden;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+// Galvenes izskats
+#header {
+  max-width: 100%;
+  height: 80px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 50px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  position: sticky;
+  top: 20px;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(227, 242, 253, 0.8);
+
+  // Kad ir klase hide, galvene pārvietoajs uz augšu aiz ekrānu (pazūd)
+  &.hide {
+    transform: translateY(-120%);
+  }
+
+  .headerBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    .headerFirstHalf {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 50px;
+
+      .logo {
+        width: 60px;
+        cursor: pointer;
+        max-width: none;
+      }
+
+      .searchProduct {
+        height: 40px;
+        width: 100%;
+        border-radius: 20px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        font-size: 25px;
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        font-family: $font-text;
+        color: #454545;
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .searchInput {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 500px;
+      }
+
+      .searchIcon {
+        font-size: 30px;
+        cursor: pointer;
+        border: none;
+        background: rgba(255, 255, 255, 0.8);
+        width: 40px;
+        text-align: center;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      &:focus {
+        border: 0;
+        outline: none;
+      }
+    }
+
+    .headerSecondHalf {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+
+      .headerLink {
+        text-decoration: none;
+        color: #454545;
+        font-weight: 600;
+        font-size: 20px;
+        transition: 0.3s ease;
+
+        &:hover {
+          color: #7d7d7d;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+// Kājenes izskats
+#footer {
+  flex-shrink: 0;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  background-color: #e3f2fd;
+  display: flex;
+  justify-content: center;
+
+  .footerBlock {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    gap: 100px;
+  }
+
+  .footerLogo {
+    width: 100px;
+  }
+
+  .secondFooterBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .firstFooterBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .thirdFooterBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 400;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      transition: 0.3s ease;
+
+      i {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        color: #7d7d7d;
+      }
+    }
+  }
+
+  .footerTitle {
+    h1 {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+      color: #454545;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #454545;
+  }
+}
+
+// Visu pogu pamata izskats
+.mainButton {
+  background-color: #1565c0;
+  border: 0;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  font-family: $font-text;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #1e88e5;
+  }
+
+  &:active {
+    background-color: #0d47a1;
+  }
+}
+
+// Sākuma lapas izskats
+.landingPageMain {
+  gap: 50px;
+  .welcomeBlock {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 90px;
+    margin-bottom: 150px;
+
+    .welcomeTextImage {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      .welcomeImage {
+        width: 200px;
+        height: 400px;
+        border-top-left-radius: 200px;
+        border-bottom-left-radius: 200px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .secondWelcomeImage {
+        width: 100px;
+        height: 300px;
+        border-radius: 40px;
+      }
+      .welcomeText {
+        .welcomeTitle {
+          font-size: 80px;
+        }
+
+        .welcomeSecondary {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+
+  .bannerBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .descriptionBlock {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .descriptionTitle {
+      font-size: 45px;
+    }
+
+    .descriptionText {
+      font-weight: 400;
+      text-align: center;
+      word-spacing: 3px;
+      font-size: 25px;
+    }
+  }
+
+  .reviewBlock {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+
+    .reviewTitle {
+      font-size: 48px;
+    }
+  }
+
+  .reviewModal {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    width: 600px;
+
+    .reviewModalControl {
+      width: 100%;
+      text-align: right;
+
+      .closeReviewModal {
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .reviewInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      #reviewForm {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 2px;
+
+          .reviewFormInput {
+            border: 1px solid #ccc;
+            font-family: "Inter";
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 8px;
+            transition: 0.3s;
+
+            &:focus {
+              border: 1px solid #0d47a1;
+              outline: none;
+            }
+          }
+
+          .error-message {
+            color: red;
+            font-size: 18px;
+            margin-top: 3px;
+            height: 18px;
+            display: block;
+          }
+
+          .reviewText {
+            border: 1px solid #ccc;
+            font-family: "Inter";
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 8px;
+            transition: 0.3s;
+            resize: none;
+
+            &:focus {
+              border: 1px solid #0d47a1;
+              outline: none;
+            }
+          }
+        }
+
+        .reviewButton {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+.headerMinimized {
+  display: none;
+  font-size: 35px;
+  cursor: pointer;
+  color: #454545;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #7d7d7d;
+  }
+}
+
+.headerMenu {
+  display: flex;
+  background: rgba(227, 242, 253);
+  position: absolute;
+  top: 80px;
+  right: 0;
+  border-radius: 20px;
+  gap: 40px;
+  padding: 10px;
+
+  .menuLink {
+    display: block;
+    font-size: 100px;
+    padding: 20px;
+  }
+
+  .closeIcon {
+    cursor: pointer;
+    font-size: 40px;
+    text-align: end;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+// Checkbox izskats
+.checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+
+  // Jauna checkbox laukuma izskats
+  .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    background-color: #ccc;
+    border-radius: 0.25em;
+
+    // Atzimēta checkbox ikonas veidošana
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+
+      left: 0.45em;
+      top: 0.25em;
+      width: 0.25em;
+      height: 0.5em;
+      border: solid white;
+      border-width: 0 0.15em 0.15em 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  // Noklusējuma checkbox paslēpšana
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    // Atzīmēta checkbox fona izskats
+    &:checked ~ .checkmark {
+      background-color: #42a5f5;
+      border-radius: 0.25em;
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+}
+
+// Kataloga izskats
+.catalog {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+
+  .catalogFilter {
+    width: 300px;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+
+    .filterSection {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+
+      .sectionTitle {
+        font-size: 20px;
+        font-weight: 700;
+        color: #454545;
+      }
+
+      .sectionContent {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+
+        .selection {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        // Cenas slīdņa izskats
+        .priceSlider {
+          .price-values {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: bold;
+            width: 100%;
+
+            input {
+              width: 40%;
+              border: none;
+              background-color: #edf2fb;
+              border-radius: 5px;
+              outline: none;
+              padding: 5px;
+            }
+          }
+
+          .range-slider {
+            position: relative;
+            height: 5px;
+            background-color: #edf2fb;
+          }
+
+          input[type="range"] {
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: none;
+            pointer-events: none;
+            -webkit-appearance: none;
+          }
+
+          input[type="range"]::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 16px;
+            height: 16px;
+            background: #0d47a1;
+            border-radius: 50%;
+            -webkit-appearance: none;
+          }
+
+          .slider-track {
+            position: absolute;
+            height: 5px;
+            background: #4caf50;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .catalogMain {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .catalogTitle {
+      font-weight: 700;
+      font-size: 35px;
+    }
+
+    .products {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+
+      .productCard {
+        width: 30%;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        img {
+          cursor: pointer;
+          height: 150px;
+          object-fit: contain;
+        }
+
+        .productTitle {
+          width: 100%;
+          height: 60px;
+
+          .productBrand {
+            font-weight: 700;
+            color: #7d7d7d;
+          }
+
+          .productModel {
+            font-size: 15px;
+            font-weight: 600;
+            overflow: none;
+          }
+        }
+
+        .productPrice {
+          font-weight: 700;
+          width: 100%;
+          text-align: left;
+          font-size: 25px;
+          color: #454545;
+        }
+      }
+    }
+  }
+}
+
+// Produkta lapas izskats
+.productPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+
+  .productPrieview {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+    img {
+      width: 400px;
+      height: 500px;
+      object-fit: contain;
+    }
+
+    .productMainInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .productNameAndBrand {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;
+
+        .productViewBrand {
+          font-weight: 700;
+          color: #454545;
+        }
+
+        .productViewName {
+          font-size: 25px;
+        }
+      }
+
+      .productViewPrice {
+        font-size: 40px;
+      }
+
+      .productButton {
+        width: 100%;
+        font-size: 30px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .productDescription {
+    background-color: #e3f2fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    gap: 40px;
+
+    .productOverallDescription {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .descriptionTitle {
+        font-size: 30px;
+      }
+
+      .descriptionText {
+        font-size: 20px;
+        width: 700px;
+        text-align: center;
+      }
+    }
+  }
+
+  .productTabularDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .productTable {
+      width: 800px;
+      border-collapse: collapse;
+
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            background-color: #bbdefb;
+          }
+
+          .specification {
+            font-size: 25px;
+            width: 300px;
+          }
+
+          .specificationValue {
+            color: #454545;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Groza izskats
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+
+  .cartTitle {
+    font-size: 48px;
+  }
+
+  .cartMain {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+    .cartProductContainer {
+      background-color: #e3f2fd;
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      height: 700px;
+      overflow: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+
+      .cartProduct {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 100%;
+        border-bottom: 1px solid #edede9;
+        // justify-content: space-between;
+        align-items: center;
+        min-height: 150px;
+        max-height: 150px;
+        padding: 20px;
+        gap: 20px;
+
+        img {
+          width: 100px;
+          min-width: 100px;
+          height: 100px;
+          object-fit: contain;
+        }
+
+        .cartProductInfo {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          width: 100%;
+
+          .cartProductNameAndBrand {
+            .cartProductBrand {
+              font-size: 20px;
+              font-weight: 700;
+              color: #7d7d7d;
+            }
+
+            .cartProductModel {
+              font-size: 15px;
+            }
+          }
+
+          .cartProductTools {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+
+            .deleteButton {
+              width: 150px;
+              height: 35px;
+            }
+
+            .cartProductPrice {
+              color: #454545;
+              font-size: 25px;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cartInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 300px;
+    gap: 30px;
+
+    .cartCommon {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .cartPrice {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .cartPriceTitle {
+          font-size: 38px;
+        }
+
+        .overallPrice {
+          font-size: 38px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .orderPlacingButton {
+      width: 100%;
+    }
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .orderModal {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    width: 600px;
+    // height: 800px;
+
+    .orderModalControl {
+      width: 100%;
+      text-align: right;
+
+      .closeOrderModal {
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      #orderForm {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 2px;
+
+          .orderFormInput {
+            border: 1px solid #ccc;
+            font-family: "Inter";
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 8px;
+            transition: 0.3s;
+
+            &:focus {
+              border: 1px solid #0d47a1;
+              outline: none;
+            }
+          }
+
+          .error-message {
+            color: red;
+            font-size: 18px;
+            margin-top: 3px;
+            height: 18px;
+            display: block;
+          }
+        }
+
+        .orderButton {
+          width: 300px;
+        }
+
+        .orderFullPrice {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-size: 30px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.loginModal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  width: 600px;
+
+  .loginModalControl {
+    width: 100%;
+    text-align: right;
+
+    .closeLoginModal {
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+
+  .loginInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    #loginForm {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2px;
+
+        .loginFormInput {
+          border: 1px solid #ccc;
+          font-family: "Inter";
+          font-size: 20px;
+          padding: 5px;
+          border-radius: 8px;
+          transition: 0.3s;
+
+          &:focus {
+            border: 1px solid #0d47a1;
+            outline: none;
+          }
+        }
+
+        .error-message {
+          color: red;
+          font-size: 18px;
+          margin-top: 3px;
+          height: 18px;
+          display: block;
+        }
+      }
+    }
+  }
+  .switchButton {
+    background-color: #ffffff;
+    border: 1px solid #0d47a1;
+    color: #0d47a1;
+  }
+}
+
+.registerPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .registerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 500px;
+
+    .registerTitle {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    #registerForm {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2px;
+
+        .registerFormInput {
+          border: 1px solid #ccc;
+          font-family: "Inter";
+          font-size: 20px;
+          padding: 5px;
+          border-radius: 8px;
+          transition: 0.3s;
+
+          &:focus {
+            border: 1px solid #0d47a1;
+            outline: none;
+          }
+        }
+
+        .error-message {
+          color: red;
+          font-size: 18px;
+          margin-top: 3px;
+          height: 18px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.aboutPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  .text {
+    font-size: 25px;
+  }
+
+  .aboutContainer {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .aboutIntro {
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+
+    .aboutTitle {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .secondaryAboutTitle {
+      font-size: 38px;
+    }
+
+    .aboutValues {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+
+      .aboutValue {
+        background: #e3f2fd;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        text-align: center;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+
+    .aboutCategory {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .aboutCategoryCard {
+      background: #e3f2fd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      transition: transform 0.3s ease;
+      text-align: center;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.faqPage {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+
+  .faq {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    .faqTitle {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 48px;
+    }
+
+    .faqItem {
+      width: 100%;
+
+      .faqQuestion {
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: none;
+        outline: none;
+        text-align: left;
+        font-size: 30px;
+        padding: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: #e3f2fd;
+        }
+      }
+
+      .faqAnswer {
+        padding: 0 20px;
+        font-size: 25px;
+        background-color: #e3f2fd;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+
+        &.show {
+          padding: 20px;
+          max-height: 300px;
+        }
+      }
+    }
+  }
+}
+
+.contactPage {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  .contactTitle {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .contact {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .contactContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      .contactMap {
+        border-radius: 40px;
+        overflow: hidden;
+        max-width: 1000px;
+      }
+    }
+
+    .contactInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 25px;
+    }
+  }
+}
+
+// Responsīva dizaina breakpoints un izskata maiņa noteiktos ekrāna platumos
+@media screen and (max-width: 1200px) {
+  .headerLink {
+    display: none;
+  }
+
+  .headerMinimized {
+    display: block;
+  }
+
+  .welcomeTitle {
+    font-size: 60px !important;
+  }
+
+  .welcomeSecondary {
+    font-size: 28px !important;
+  }
+
+  .welcomeImage {
+    width: 150px !important;
+    height: 300px !important;
+  }
+
+  .secondWelcomeImage {
+    height: 200px !important;
+  }
+
+  .welcomeText {
+    width: 500px;
+  }
+
+  .bannerBlock {
+    max-width: 100%;
+    width: 100%;
+    max-height: 700px;
+
+    img {
+      width: 30% !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .headerMenu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .welcomeTitle {
+    font-size: 50px !important;
+  }
+
+  .welcomeSecondary {
+    font-size: 20px !important;
+  }
+
+  .welcomeImage {
+    width: 130px !important;
+    height: 250px !important;
+  }
+
+  .secondWelcomeImage {
+    height: 170px !important;
+  }
+
+  .welcomeText {
+    width: 400px;
+  }
+
+  .descriptionBlock {
+    width: 90% !important;
+    max-width: 800px;
+
+    .descriptionTitle {
+      text-align: center;
+      font-size: 40px !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .searchInput {
+    margin-right: 10px;
+  }
+
+  .headerFirstHalf {
+    gap: 10px !important;
+  }
+
+  .footerBlock {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 50px !important;
+  }
+
+  .welcomeImage {
+    display: none;
+  }
+
+  .secondWelcomeImage {
+    display: none;
+  }
+
+  .bannerBlock {
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    flex-wrap: wrap;
+
+    img {
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #header {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .headerBoard {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .logo {
+      width: 35px !important;
+    }
+  }
+
+  .welcomeText {
+    width: 300px !important;
+  }
+
+  .welcomeTitle {
+    font-size: 40px !important;
+  }
+}

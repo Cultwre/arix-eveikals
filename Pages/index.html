@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artix - datoru piederumu interneta veikals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="landingPageMain">
+      <div class="welcomeBlock">
+        <div class="welcomeTextImage">
+          <div class="welcomeText">
+            <h1 class="welcomeTitle title">Atklājiet datoru piederumus</h1>
+            <h3 class="welcomeSecondary text">
+              Arix piedāva plašu izvēli starp datoru piedērumiem!
+            </h3>
+          </div>
+          <img src="../images/welcome-image.jpg" class="welcomeImage" />
+          <img src="../images/welcome-image2.jpg" class="secondWelcomeImage" />
+        </div>
+        <a href="catalog.html"
+          ><button class="mainButton welcomeButton">Iepērcies tūlīt!</button></a
+        >
+      </div>
+      <div class="bannerBlock">
+        <img src="../images/banner-1.png" />
+        <img src="../images/banner-1.png" />
+        <img src="../images/banner-1.png" />
+      </div>
+      <div class="descriptionBlock">
+        <h1 class="descriptionTitle title">
+          Tehnoloģijas, kurām vari uzticēties.
+        </h1>
+        <p class="descriptionText text">
+          Ja mīli tehnoloģijas un kvalitatīvu datoru aprīkojumu - esi īstajā
+          vietā!
+          <br />Arix piedāvā jaunākās un uzticamākās perifērijas ierīces gan
+          ikdienas lietošanai, gan spēlēm. Mēs rūpīgi izvēlamies produktus, lai
+          nodrošinātu vislabāko kvalitāti un sniegumu par saprātīgu cenu.
+          <br />Ar drošiem maksājumiem un atsaucīgu klientu atbalstu mēs
+          nodrošinām, lai tava iepirkšanās pieredze vienmēr būtu ērta, droša un
+          patīkama. <br /><br /><strong style="font-size: 30px"
+            ><i
+              >Arix - vieta, kur tehnoloģijas satiekas ar kvalitāti.</i
+            ></strong
+          >
+        </p>
+      </div>
+      <div class="reviewBlock">
+        <h1 class="title reviewTitle">Ir velme uzdot mums jautājumu?</h1>
+        <button class="mainButton reviewButton">Atvert formu</button>
+      </div>
+      <div id="reviewModalOverlay" class="modalOverlay hidden">
+        <div class="reviewModal">
+          <div class="reviewModalControl">
+            <span class="material-symbols-outlined closeReviewModal">
+              close
+            </span>
+          </div>
+          <div class="reviewInfo">
+            <h1 class="reviewModalTitle title">Uzrakstiet savu jautājumu</h1>
+            <form id="reviewForm">
+              <div class="form-group text">
+                <label for="reviewEmail">E-pasts</label>
+                <input
+                  type="email"
+                  id="reviewEmail"
+                  class="reviewFormInput"
+                  name="reviewEmail"
+                  placeholder="Ievadi e-pastu"
+                />
+                <small class="error-message"></small>
+              </div>
+              <div class="form-group text">
+                <label for="reviewText">Jautājums</label>
+                <textarea
+                  id="reviewText"
+                  name="reviewText"
+                  class="reviewText"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+                <small class="error-message"></small>
+              </div>
+              <button type="submit" class="mainButton loginButton">
+                Aizsūtīt
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+    <script src="../js/landingPage.js"></script>
+  </body>
+</html>

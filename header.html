@@ -1,0 +1,40 @@
+<div class="headerBoard">
+  <div class="headerFirstHalf">
+    <a href="index.html"><img class="logo" src="../images/logo.png" /></a>
+    <div class="searchInput">
+      <input
+        type="text"
+        name="searchProduct"
+        class="searchProduct"
+        id="searchBar"
+        placeholder="Meklēt produktu"
+      />
+      <button class="searchIcon"><span class="material-symbols-outlined searchIcon">search</span></button>
+      </div>
+    </div>
+    <div class="headerSecondHalf">
+      <a href="catalog.html" class="headerLink text"><span>Katalogs</span></a>
+      <a href="#" class="headerLink text" onclick="openLoginModal()"><span>Reģistrēties / Pieslēgties</span></a>
+      <a href="cart.html" class="headerLink text"><span>Grozs</span></a>
+      <span
+        class="material-symbols-outlined headerMinimized"
+        onclick="showHeaderMenu()"
+        >Menu</span
+      >
+      <div class="headerMenu hidden">
+        <div class="menuLinkBlock">
+          <a href="catalog.html" class="headerLink text menuLink"><span>Katalogs</span></a>
+          <a href="#" class="headerLink text menuLink"
+            ><span>Kategorijas</span></a
+          >
+          <a href="#" class="headerLink text menuLink"><span>Grozs</span></a>
+        </div>
+        <span
+          class="material-symbols-outlined closeIcon"
+          onclick="showHeaderMenu()"
+          >close</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

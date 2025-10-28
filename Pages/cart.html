@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artix - datoru piederumu interneta veikals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main>
+      <div class="cartPage">
+        <h1 class="cartTitle title">Grozs</h1>
+        <div class="cartMain">
+          <div class="cartProductContainer"></div>
+          <div class="cartInfo">
+            <div class="cartCommon">
+              <div class="cartPrice">
+                <h1 class="cartPriceTitle text">Kopēja summa:</h1>
+                <h1 class="overallPrice text">66,99</h1>
+              </div>
+            </div>
+            <button class="mainButton orderPlacingButton">
+              Noformēt pasūtījumu
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="orderModalOverlay" class="modalOverlay hidden">
+        <div class="orderModal">
+          <div class="orderModalControl">
+            <span class="material-symbols-outlined closeOrderModal">
+              close
+            </span>
+          </div>
+          <!-- <div class="orderInfo">
+            <h1 class="orderModalTitle title">Informācija par pasūtījumu</h1>
+            <div class="orderProducts">
+              <h2 class="orderModalText text">Produkti:</h2>
+              <div class="orderProductsContainer">
+                <div class="orderProduct text">
+                  <span class="orderProductName">G703-Lightweight</span>
+                  <span class="orderProductPrice">66,99</span>
+                </div>
+                <div class="orderProduct text">
+                  <span class="orderProductName">G703-Lightweight</span>
+                  <span class="orderProductPrice">66,99</span>
+                </div>
+                <div class="orderProduct text">
+                  <span class="orderProductName"
+                    >G703-Lightweight G703-Lightweight G703-Lightweight
+                    G703-Lightweight G703-Lightweight</span
+                  >
+                  <span class="orderProductPrice">66,99</span>
+                </div>
+                <div class="orderProduct text">
+                  <span class="orderProductName">G703-Lightweight</span>
+                  <span class="orderProductPrice">66,99</span>
+                </div>
+              </div>
+              <div class="orderFullPrice text">
+                <span class="orderModalText">Kopā:</span>
+                <span class="orderPrice">120,99</span>
+              </div>
+            </div>
+          </div> -->
+          <div class="userInfo">
+            <h1 class="orderModalTitle title">Pircēja informācija</h1>
+            <form id="orderForm">
+              <div class="form-group text">
+                <label for="name">Vārds</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="orderFormInput"
+                  name="name"
+                  placeholder="Ievadi savu vārdu"
+                />
+                <small class="error-message"></small>
+              </div>
+
+              <div class="form-group text">
+                <label for="name">Uzvārds</label>
+                <input
+                  type="text"
+                  id="surname"
+                  class="orderFormInput"
+                  name="surname"
+                  placeholder="Ievadi savu Uzvārdu"
+                />
+                <small class="error-message"></small>
+              </div>
+
+              <div class="form-group text">
+                <label for="email">E-pasts</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="orderFormInput"
+                  name="email"
+                  placeholder="Ievadi e-pastu"
+                />
+                <small class="error-message"></small>
+              </div>
+
+              <div class="form-group text">
+                <label for="phone">Telefona numurs</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="orderFormInput"
+                  name="phone"
+                  placeholder="Ievadi telefona numuru"
+                />
+                <small class="error-message"></small>
+              </div>
+
+              <div class="form-group text">
+                <label for="phone">Piegādes adrese</label>
+                <input
+                  type="text"
+                  id="adress"
+                  class="orderFormInput"
+                  name="adress"
+                  placeholder="Ievadi piegādes adresi"
+                />
+                <small class="error-message"></small>
+              </div>
+
+              <div class="form-group text">
+                <p>Apmaksas veids:</p>
+                <label
+                  ><input
+                    type="radio"
+                    name="payment"
+                    value="cash"
+                    class="orderFormRadio"
+                  />
+                  Skaidrā naudā</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="payment"
+                    value="bank"
+                    class="orderFormRadio"
+                  />
+                  Bankas pārskaitījums</label
+                >
+                <small class="error-message"></small>
+              </div>
+              <button type="submit" class="mainButton orderButton">
+                Apstiprināt pasūtījumu
+              </button>
+              <div class="orderFullPrice text">
+                <span class="orderModalText">Kopā:</span>
+                <span class="orderPrice">120,99</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+  </body>
+</html>
