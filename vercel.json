@@ -1,4 +1,8 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/", "destination": "/pages/index.html" }]
+  "builds": [{ "src": "Pages/index.html", "use": "@vercel/static" }],
+  "routes": [
+    { "src": "/styles/(.*)", "dest": "styles/$1" },
+    { "src": "/js/(.*)", "dest": "js/$1" },
+    { "src": "/(.*)", "dest": "Pages/$1" }
+  ]
 }
