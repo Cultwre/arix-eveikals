@@ -4,7 +4,7 @@ const categories = ["Datorpele", "Klaviatūra", "Austiņas", "Paliktņi pelēm"]
 const products = [
   {
     Category: 0,
-    imageUrl: "../images/pele1.jpg",
+    imageUrl: "/images/pele1.jpg",
     name: "Logitech G102 Lightsync",
     color: "Melna",
     brand: "Logitech",
@@ -20,7 +20,7 @@ const products = [
   },
   {
     Category: 0,
-    imageUrl: "../images/pele2.jpg",
+    imageUrl: "/images/pele2.jpg",
     name: "Steelseries Aerox 3",
     color: "Melna",
     brand: "Steelseries",
@@ -36,7 +36,7 @@ const products = [
   },
   {
     Category: 0,
-    imageUrl: "../images/pele3.jpg",
+    imageUrl: "/images/pele3.jpg",
     name: "Logitech G403 Hero",
     color: "Melna",
     brand: "Logitech",
@@ -52,7 +52,7 @@ const products = [
   },
   {
     Category: 0,
-    imageUrl: "../images/pele4.jpg",
+    imageUrl: "/images/pele4.jpg",
     name: "Defender Katana GM-511, 2.4 ghz wireless",
     color: "Melna",
     brand: "Defender",
@@ -68,7 +68,7 @@ const products = [
   },
   {
     Category: 0,
-    imageUrl: "../images/pele5.jpg",
+    imageUrl: "/images/pele5.jpg",
     name: "Razer Deathadder V2 X HyperSpeed",
     color: "Melna",
     brand: "Razer",
@@ -84,7 +84,7 @@ const products = [
   },
   {
     Category: 1,
-    imageUrl: "../images/klaviatura1.jpg",
+    imageUrl: "/images/klaviatura1.jpg",
     name: "Logitech MX Keys S, EN",
     color: "Gaiši pelēka",
     brand: "Logitech",
@@ -101,7 +101,7 @@ const products = [
   },
   {
     Category: 1,
-    imageUrl: "../images/klaviatura2.jpg",
+    imageUrl: "/images/klaviatura2.jpg",
     name: "Steelseries Apex Apex 7 QX2 Red",
     color: "Melna",
     brand: "Steelseries",
@@ -118,7 +118,7 @@ const products = [
   },
   {
     Category: 1,
-    imageUrl: "../images/klaviatura3.jpg",
+    imageUrl: "/images/klaviatura3.jpg",
     name: "Redragon K606 Lakshmi Red",
     color: "Oranža",
     brand: "Redragon",
@@ -135,7 +135,7 @@ const products = [
   },
   {
     Category: 1,
-    imageUrl: "../images/klaviatura4.jpg",
+    imageUrl: "/images/klaviatura4.jpg",
     name: "Razer Huntsman Mini Huntsman Mini Red",
     color: "Balta",
     brand: "Razer",
@@ -152,7 +152,7 @@ const products = [
   },
   {
     Category: 1,
-    imageUrl: "../images/klaviatura5.jpg",
+    imageUrl: "/images/klaviatura5.jpg",
     name: "Dell KB216, EN/RU",
     color: "Melna",
     brand: "Dell",
@@ -169,7 +169,7 @@ const products = [
   },
   {
     Category: 2,
-    imageUrl: "../images/austinas1.jpg",
+    imageUrl: "/images/austinas1.jpg",
     name: "JBL Live 770NC",
     color: "Melna",
     brand: "JBL",
@@ -185,7 +185,7 @@ const products = [
   },
   {
     Category: 2,
-    imageUrl: "../images/austinas2.jpg",
+    imageUrl: "/images/austinas2.jpg",
     name: "Logitech G Pro X2 Lightspeed 981-001263",
     color: "Melna",
     brand: "Logitech",
@@ -201,7 +201,7 @@ const products = [
   },
   {
     Category: 2,
-    imageUrl: "../images/austinas3.jpg",
+    imageUrl: "/images/austinas3.jpg",
     name: "HyperX Cloud Alpha",
     color: "Melna/Sarkana",
     brand: "HyperX",
@@ -217,7 +217,7 @@ const products = [
   },
   {
     Category: 2,
-    imageUrl: "../images/austinas4.jpg",
+    imageUrl: "/images/austinas4.jpg",
     name: "Sony WH-ULT900N",
     color: "Melna",
     brand: "Sony",
@@ -233,7 +233,7 @@ const products = [
   },
   {
     Category: 2,
-    imageUrl: "../images/austinas5.jpg",
+    imageUrl: "/images/austinas5.jpg",
     name: "HyperX CloudX Stinger II Cloud Stinger 2 Core",
     color: "Melna",
     brand: "HyperX",
@@ -249,7 +249,7 @@ const products = [
   },
   {
     Category: 3,
-    imageUrl: "../images/paliktnis1.jpg",
+    imageUrl: "/images/paliktnis1.jpg",
     name: "Razer Atlas Gaming, 45 cm x 40 cm x 0.5 cm",
     color: "Melna",
     brand: "Razer",
@@ -265,7 +265,7 @@ const products = [
   },
   {
     Category: 3,
-    imageUrl: "../images/paliktnis2.jpg",
+    imageUrl: "/images/paliktnis2.jpg",
     name: "Havit HV-MP847, 70 cm x 30 cm x 0.3 cm",
     color: "Rozā",
     brand: "Havit",
@@ -281,7 +281,7 @@ const products = [
   },
   {
     Category: 3,
-    imageUrl: "../images/paliktnis3.jpg",
+    imageUrl: "/images/paliktnis3.jpg",
     name: "Esperanza, 24 cm x 30 cm x 0.3 cm",
     color: "Melna/Zaļa",
     brand: "Esperanza",
@@ -297,7 +297,7 @@ const products = [
   },
   {
     Category: 3,
-    imageUrl: "../images/paliktnis4.jpg",
+    imageUrl: "/images/paliktnis4.jpg",
     name: "Asus, 40 cm x 40 cm x 0.3 cm",
     color: "Melna",
     brand: "Asus",
@@ -313,7 +313,7 @@ const products = [
   },
   {
     Category: 3,
-    imageUrl: "../images/paliktnis5.jpg",
+    imageUrl: "/images/paliktnis5.jpg",
     name: "Corsair, 40 cm x 45 cm x 0.6 cm",
     color: "Melna",
     brand: "Corsair",
