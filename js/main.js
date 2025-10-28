@@ -9,8 +9,8 @@ function loadHTML(elementId, file) {
 
 // Ielādē Header un Footer uz ekrānu
 window.addEventListener("DOMContentLoaded", () => {
-  loadHTML("header", "/header.html");
-  loadHTML("footer", "/footer.html");
+  loadHTML("header", "header.html");
+  loadHTML("footer", "footer.html");
 });
 
 let lastScrollY = window.scrollY;
