@@ -27,7 +27,7 @@
   <body>
     <div id="header"></div>
     <main class="landingPageMain">
-      <div class="welcomeBlock">
+      <div class="welcomeBlock reveal">
         <div class="welcomeTextImage">
           <div class="welcomeText">
             <h1 class="welcomeTitle title">Atklājiet datoru piederumus</h1>
@@ -35,23 +35,23 @@
               Arix piedāva plašu izvēli starp datoru piedērumiem!
             </h3>
           </div>
-          <img src="/images/welcome-image.jpg" class="welcomeImage" />
-          <img src="/images/welcome-image2.jpg" class="secondWelcomeImage" />
+          <img src="/images/welcome-image.webp" class="welcomeImage" />
+          <img src="/images/welcome-image2.webp" class="secondWelcomeImage" />
         </div>
         <a href="catalog.html"
           ><button class="mainButton welcomeButton">Iepērcies tūlīt!</button></a
         >
       </div>
-      <div class="bannerBlock">
-        <img src="/images/banner-1.png" />
-        <img src="/images/banner-1.png" />
-        <img src="/images/banner-1.png" />
+      <div class="bannerBlock reveal">
+        <a href="product.html?id=4"><img src="/images/banner-1.jpg" /></a>
+        <a href="product.html?id=3"><img src="/images/banner-2.jpg" /></a>
+        <a href="product.html?id=11"><img src="/images/banner-3.jpg" /></a>
       </div>
       <div class="descriptionBlock">
-        <h1 class="descriptionTitle title">
+        <h1 class="descriptionTitle title reveal">
           Tehnoloģijas, kurām vari uzticēties.
         </h1>
-        <p class="descriptionText text">
+        <p class="descriptionText text reveal">
           Ja mīli tehnoloģijas un kvalitatīvu datoru aprīkojumu - esi īstajā
           vietā!
           <br />Arix piedāvā jaunākās un uzticamākās perifērijas ierīces gan
@@ -66,12 +66,12 @@
           >
         </p>
       </div>
-      <div class="reviewBlock">
+      <div class="reviewBlock reveal">
         <h1 class="title reviewTitle">Ir velme uzdot mums jautājumu?</h1>
         <button class="mainButton reviewButton">Atvert formu</button>
       </div>
       <div id="reviewModalOverlay" class="modalOverlay hidden">
-        <div class="reviewModal">
+        <div class="reviewModal reveal">
           <div class="reviewModalControl">
             <span class="material-symbols-outlined closeReviewModal">
               close
@@ -109,8 +109,24 @@
           </div>
         </div>
       </div>
+      <div id="successModalOverlay" class="modalOverlay hidden">
+        <div class="successModal reveal">
+          <div class="successModalControl">
+            <span class="material-symbols-outlined closeSuccessModal">
+              close
+            </span>
+          </div>
+          <div class="successInfo">
+            <h1 class="reviewModalTitle title">
+              Jūsu jautājums tika veiksmīgi aizsūtīts!
+            </h1>
+            <button class="mainButton successOk">Labi</button>
+          </div>
+        </div>
+      </div>
     </main>
     <div id="footer"></div>
+    <script src="/js/catalog.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/landingPage.js"></script>
   </body>

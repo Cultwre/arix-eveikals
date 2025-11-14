@@ -28,10 +28,10 @@
     <div id="header"></div>
     <main>
       <div class="cartPage">
-        <h1 class="cartTitle title">Grozs</h1>
+        <h1 class="cartTitle title reveal">Grozs</h1>
         <div class="cartMain">
-          <div class="cartProductContainer"></div>
-          <div class="cartInfo">
+          <div class="cartProductContainer reveal"></div>
+          <div class="cartInfo reveal">
             <div class="cartCommon">
               <div class="cartPrice">
                 <h1 class="cartPriceTitle text">Kopēja summa:</h1>
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div id="orderModalOverlay" class="modalOverlay hidden">
-        <div class="orderModal">
+        <div class="orderModal reveal">
           <div class="orderModalControl">
             <span class="material-symbols-outlined closeOrderModal">
               close
@@ -178,8 +178,25 @@
           </div>
         </div>
       </div>
+      <div id="successModalOverlay" class="modalOverlay hidden">
+        <div class="successModal reveal">
+          <div class="successModalControl">
+            <span class="material-symbols-outlined closeSuccessModal">
+              close
+            </span>
+          </div>
+          <div class="successInfo">
+            <h1 class="reviewModalTitle title">
+              Produkti tika veiksmīgi pasūtīti!
+            </h1>
+            <button class="mainButton successOk">Labi</button>
+          </div>
+        </div>
+      </div>
+      <div id="toast-container"></div>
     </main>
     <div id="footer"></div>
+    <script src="/js/catalog.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cart.js"></script>
   </body>

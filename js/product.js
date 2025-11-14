@@ -1,3 +1,4 @@
+// Produktu attribūtu tulkojums
 const attributeTranslations = {
   model: "Modelis",
   switch: "Taustiņu tips",
@@ -14,6 +15,7 @@ const attributeTranslations = {
   micro: "Mikrofons",
 };
 
+// Paņem id no link, un atrod produktu ar attiecīgo id
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 const product = products.find((product) => product.id === parseInt(productId));
@@ -21,11 +23,12 @@ console.log(product);
 
 const productPage = document.querySelector(`.productPage`);
 
+// Ievieto html kodu, ar produkta attribūtiem (bilde, nosaukums, specifikācija...)
 productPage.insertAdjacentHTML(
   `beforeend`,
   `
      <div class="productPrieview">
-          <img src="${product.imageUrl}" />
+          <img src="${product.imageUrl}"/>
           <div class="productMainInfo">
             <div class="productNameAndBrand">
               <h1 class="productViewBrand title">${product.brand}</h1>
@@ -75,8 +78,9 @@ const tableValues = document.querySelector(`.productTableValues`);
 
 const specTable = document.querySelector("#specifications");
 
+// produkta objekta attribūti
 for (const key in product) {
-  // Skip fields you don't want to show
+  // attribūti, kurus palaist, un nreādīt specifikācija tabulā
   if (
     [
       "imageUrl",
@@ -94,7 +98,7 @@ for (const key in product) {
   const attributeName = attributeTranslations[key] || key;
   const value = product[key];
 
-  // Insert row using insertAdjacentHTML
+  // Ievieto rindu, ar attribūtu un to vertību tabulā
   tableValues.insertAdjacentHTML(
     "beforeend",
     `<tr>

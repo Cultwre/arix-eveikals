@@ -334,6 +334,7 @@ const maxRange = document.querySelector("#max-range");
 const minPrice = document.querySelector("#min-price");
 const maxPrice = document.querySelector("#max-price");
 const sliderTrack = document.querySelector(".slider-track");
+const filterBtn = document.querySelector(".filterBtn");
 
 const minGap = 10;
 
@@ -458,6 +459,7 @@ function insertProducts(
         (p) => p.id === parseInt(e.dataset.id)
       );
       addToCart(addedProduct);
+      showToast("Produkts tika veiksmīgi pievienots grozam");
     });
   });
 }
@@ -659,3 +661,51 @@ insertProducts(
   minPrice.value,
   maxPrice.value
 );
+
+const catalogFilter = document.querySelector(`.catalogFilter-modal`);
+const closeFilterModal = document.querySelector(`.closeFilterModal`);
+
+// filterBtn.addEventListener("click", () => {
+//   catalogFilter.classList.remove("hidden");
+//   document.body.classList.add("modal-active");
+// });
+
+// closeFilterModal.addEventListener("click", () => {
+//   catalogFilter.classList.add("hidden");
+//   document.body.classList.remove("modal-active");
+// });
+
+// Filtru modāla loga paradīšana un slēpšana (mobīlaja skatā)
+filterBtn.addEventListener("click", () => {
+  catalogFilter.classList.remove("unactive");
+  document.body.style.overflow = "hidden";
+  catalogFilter.style.display = "flex !important";
+});
+
+closeFilterModal.addEventListener("click", () => {
+  catalogFilter.classList.add("unactive");
+  document.body.style.overflow = "";
+});
+
+// Funkcija pop up ziņojuma parādīšanai
+function showToast(message) {
+  const container = document.getElementById("toast-container");
+
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.classList.add("text");
+  toast.innerText = message;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 10);
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 3000);
+}

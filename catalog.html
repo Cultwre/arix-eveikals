@@ -28,71 +28,80 @@
     <div id="header"></div>
     <main>
       <div class="catalog">
-        <div class="catalogFilter">
-          <div class="filterSection">
-            <h1 class="sectionTitle title">Kategorijas</h1>
-            <div class="sectionContent" id="categoryFilter"></div>
+        <div class="catalogFilter-modal unactive">
+          <div class="filterModalControl">
+            <span class="material-symbols-outlined closeFilterModal">
+              close
+            </span>
           </div>
-          <div class="filterSection">
-            <h1 class="sectionTitle title">Cena</h1>
-            <div class="sectionContent" id="priceFilter">
-              <div class="priceSlider">
-                <div class="price-values text">
-                  <input
-                    id="min-price"
-                    type="number"
-                    name="min-price"
-                    value="0"
-                    class="text"
-                  />
-                  <input
-                    id="max-price"
-                    type="number"
-                    name="max-price"
-                    value="1000"
-                    class="text"
-                    max="1000"
-                  />
-                </div>
+          <div class="catalogFilter reveal">
+            <div class="filterSection">
+              <h1 class="sectionTitle title">Kategorijas</h1>
+              <div class="sectionContent" id="categoryFilter"></div>
+            </div>
+            <div class="filterSection">
+              <h1 class="sectionTitle title">Cena</h1>
+              <div class="sectionContent" id="priceFilter">
+                <div class="priceSlider">
+                  <div class="price-values text">
+                    <input
+                      id="min-price"
+                      type="number"
+                      name="min-price"
+                      value="0"
+                      class="text"
+                    />
+                    <input
+                      id="max-price"
+                      type="number"
+                      name="max-price"
+                      value="1000"
+                      class="text"
+                      max="1000"
+                    />
+                  </div>
 
-                <div class="range-slider">
-                  <input
-                    type="range"
-                    id="min-range"
-                    min="0"
-                    max="1000"
-                    value="0"
-                  />
-                  <input
-                    type="range"
-                    id="max-range"
-                    min="0"
-                    max="1000"
-                    value="1000"
-                  />
-                  <div class="slider-track"></div>
+                  <div class="range-slider">
+                    <input
+                      type="range"
+                      id="min-range"
+                      min="0"
+                      max="1000"
+                      value="0"
+                    />
+                    <input
+                      type="range"
+                      id="max-range"
+                      min="0"
+                      max="1000"
+                      value="1000"
+                    />
+                    <div class="slider-track"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="filterSection">
-            <h1 class="sectionTitle title">Zīmols</h1>
-            <div class="sectionContent" id="brandFilter"></div>
-          </div>
-          <div class="filterSection">
-            <h1 class="sectionTitle title">Krāsa</h1>
-            <div class="sectionContent" id="colorFilter"></div>
+            <div class="filterSection">
+              <h1 class="sectionTitle title">Zīmols</h1>
+              <div class="sectionContent" id="brandFilter"></div>
+            </div>
+            <div class="filterSection">
+              <h1 class="sectionTitle title">Krāsa</h1>
+              <div class="sectionContent" id="colorFilter"></div>
+            </div>
           </div>
         </div>
-        <div class="catalogMain">
+        <div class="catalogMain reveal">
           <h1 class="catalogTitle title">Katalogs</h1>
+          <button class="mainButton filterBtn">Atvērt filtru</button>
           <div class="products"></div>
           <div class="pages"></div>
         </div>
       </div>
+      <div id="toast-container"></div>
     </main>
     <div id="footer"></div>
-    <script src="/js/main.js"></script>
     <script src="/js/catalog.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

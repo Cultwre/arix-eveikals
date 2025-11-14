@@ -8,6 +8,8 @@
         class="searchProduct"
         id="searchBar"
         placeholder="Meklēt produktu"
+        oninput="searchProducts(this.value)"
+        onblur="hideSearch()"
       />
       <button class="searchIcon"><span class="material-symbols-outlined searchIcon">search</span></button>
       </div>
@@ -24,16 +26,19 @@
       <div class="headerMenu hidden">
         <div class="menuLinkBlock">
           <a href="catalog.html" class="headerLink text menuLink"><span>Katalogs</span></a>
-          <a href="#" class="headerLink text menuLink"
-            ><span>Kategorijas</span></a
+          <a href="#" onclick="openLoginModal()" class="headerLink text menuLink"
+            ><span>Reģistrēties / Pieslēgties</span></a
           >
-          <a href="#" class="headerLink text menuLink"><span>Grozs</span></a>
+          <a href="cart.html" class="headerLink text menuLink"><span>Grozs</span></a>
         </div>
         <span
           class="material-symbols-outlined closeIcon"
           onclick="showHeaderMenu()"
           >close</span
         >
+      </div>
+      <div class="searchMenu hidden">
+        
       </div>
     </div>
   </div>

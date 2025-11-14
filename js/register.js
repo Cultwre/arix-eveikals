@@ -13,6 +13,7 @@ registerForm.addEventListener("submit", (e) => {
   const password = registerForm.registerPassword.value.trim();
   const repeatPassword = registerForm.registerRepeatPassword.value.trim();
 
+  // Validācija
   if (name === "") {
     registerForm.registerName.style.backgroundColor = "#fff";
     showError("registerName", "Lūdzu ievadi vārdu");
@@ -61,6 +62,7 @@ registerForm.addEventListener("submit", (e) => {
   }
 });
 
+// Funkcija kļūdu parādīšanai
 function showError(fieldName, message) {
   const field = registerForm.querySelector(`[name="${fieldName}"]`);
   const errorElement = field

@@ -2,20 +2,37 @@ const cartProductContainer = document.querySelector(`.cartProductContainer`);
 const cartPrice = document.querySelector(`.overallPrice`);
 const openOrderModal = document.querySelector(`.orderPlacingButton`);
 const modalOverlay = document.querySelector(`.modalOverlay`);
+const orderModal = document.querySelector(`.orderModal`);
 const closeOrderModal = document.querySelector(`.closeOrderModal`);
 const form = document.querySelector(`#orderForm`);
 const orderPrice = document.querySelector(`.orderPrice`);
-let fullPrice = 0;
 
+const successButton = document.querySelector(`.successOk`);
+const successModalOverlay = document.querySelector(`#successModalOverlay`);
+const closeSuccessModal = document.querySelector(`.closeSuccessModal`);
+const successModal = document.querySelector(`.successModal`);
+let fullPrice = 0;
+// Funkcija produktu parādīšanai grozā
 function showCartProduct() {
   cartProductContainer.innerHTML = "";
 
+  // Saņem produktus mainīgājā
   let cartItems = getCart();
 
-  cartItems.forEach((e, i) => {
+  if (cartItems.length === 0) {
+    // Ievieto ziņu, ka grozs ir tukšs ja tur nav produktu
     cartProductContainer.insertAdjacentHTML(
       `beforeend`,
       `
+         <span class="noneFound text cartNoneFound">Grozs ir tukšs</span>  
+            `
+    );
+  } else {
+    // Pievieno vizuāli produktus grozā
+    cartItems.forEach((e, i) => {
+      cartProductContainer.insertAdjacentHTML(
+        `beforeend`,
+        `
          <div class="cartProduct">
               <img src="${e.imageUrl}" />
               <div class="cartProductInfo">
@@ -32,22 +49,24 @@ function showCartProduct() {
               </div>
             </div>   
             `
-    );
-  });
-
-  let removeButtons = document.querySelectorAll(`.deleteButton`);
-
-  removeButtons.forEach((e) => {
-    e.addEventListener(`click`, () => {
-      removeProduct(e.dataset.id);
+      );
     });
-  });
 
+    let removeButtons = document.querySelectorAll(`.deleteButton`);
+
+    removeButtons.forEach((e) => {
+      e.addEventListener(`click`, () => {
+        removeProduct(e.dataset.id);
+        showToast("Produkts tika veiksmīgi izņemts no groza");
+      });
+    });
+  }
   updateCartPrice(cartItems);
 }
 
 showCartProduct();
 
+// Funkcija produkta dzēšanai no groza
 function removeProduct(index) {
   let currentCart = getCart();
 
@@ -57,6 +76,7 @@ function removeProduct(index) {
   showCartProduct();
 }
 
+// Funkcija groza cenas izreķināšanai
 function updateCartPrice(cartItems) {
   fullPrice = 0;
 
@@ -69,13 +89,27 @@ function updateCartPrice(cartItems) {
   orderPrice.textContent = `${fullPrice.toFixed(2)}€`;
 }
 
+// Funkcija modāla loga atveršanai
 openOrderModal.addEventListener("click", () => {
   modalOverlay.classList.remove("hidden");
   document.body.classList.add("modal-active");
 });
 
+// Funkcija modāla loga aizveršanai
 closeOrderModal.addEventListener("click", () => {
   modalOverlay.classList.add("hidden");
+  orderModal.classList.remove("in-view");
+  document.body.classList.remove("modal-active");
+});
+
+// Funkcijas modāla loga aizveršanai
+closeSuccessModal.addEventListener("click", () => {
+  successModalOverlay.classList.add("hidden");
+  document.body.classList.remove("modal-active");
+});
+
+successButton.addEventListener("click", () => {
+  successModalOverlay.classList.add("hidden");
   document.body.classList.remove("modal-active");
 });
 
@@ -83,7 +117,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let isValid = true;
 
-  // Clear all previous errors
+  // Izdzēst visas kļūdas tekstus
   form
     .querySelectorAll(".error-message")
     .forEach((el) => (el.textContent = ""));
@@ -95,7 +129,7 @@ form.addEventListener("submit", (e) => {
   const address = form.adress.value.trim();
   const payment = form.querySelector('input[name="payment"]:checked');
 
-  // Validation rules
+  // Validācija
   if (name === "") {
     form.name.style.backgroundColor = "#fff";
     showError("name", "Lūdzu ievadi savu vārdu");
@@ -155,13 +189,40 @@ form.addEventListener("submit", (e) => {
 
     modalOverlay.classList.add("hidden");
     document.body.classList.remove("modal-active");
+
+    successModalOverlay.classList.remove("hidden");
+    successModal.classList.remove("in-view");
   }
 });
 
+// Funkcija kļūdu parādīšanai
 function showError(fieldName, message) {
   const field = form.querySelector(`[name="${fieldName}"]`);
   const errorElement = field
     ? field.closest(".form-group").querySelector(".error-message")
     : null;
   if (errorElement) errorElement.textContent = message;
+}
+
+// Funkcija pop up ziņojuma parādīšanai
+function showToast(message) {
+  const container = document.getElementById("toast-container");
+
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.classList.add("text");
+  toast.innerText = message;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 10);
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 3000);
 }

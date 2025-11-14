@@ -38,6 +38,14 @@ img {
      object-fit: cover;
 }
 
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #header {
   max-width: 100%;
   height: 80px;
@@ -383,6 +391,7 @@ main {
   border-radius: 20px;
   gap: 40px;
   padding: 10px;
+  z-index: 10000;
 }
 .headerMenu .menuLink {
   display: block;
@@ -393,6 +402,73 @@ main {
   cursor: pointer;
   font-size: 40px;
   text-align: end;
+}
+
+.searchMenu {
+  display: flex;
+  background: white;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  border-radius: 10px;
+  gap: 40px;
+  padding: 10px;
+  z-index: 10000;
+  max-width: 500px;
+  width: 100%;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.searchProduct {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+}
+.searchProduct .searchFirstHalf {
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.searchProduct .searchPrice {
+  font-weight: 700;
+  color: #7d7d7d;
+}
+.searchProduct img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.searchProduct .searchImgContainer {
+  min-width: 50px;
+}
+.searchProduct span {
+  color: black;
+}
+
+.noneFound {
+  font-size: 30px;
+  font-weight: 600;
+  color: #7d7d7d;
+  width: 100%;
+  text-align: center;
+}
+
+.cartNoneFound {
+  margin-top: 50px;
+}
+
+.moreProducts {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .hidden {
@@ -450,6 +526,13 @@ main {
   flex-direction: row;
   justify-content: center;
   gap: 40px;
+}
+.catalog .catalogFilter-modal {
+  max-width: 300px;
+  display: flex;
+}
+.catalog .catalogFilter-modal .filterModalControl {
+  display: none;
 }
 .catalog .catalogFilter {
   width: 300px;
@@ -536,6 +619,9 @@ main {
 .catalog .catalogMain .catalogTitle {
   font-weight: 700;
   font-size: 35px;
+}
+.catalog .catalogMain .filterBtn {
+  display: none;
 }
 .catalog .catalogMain .products {
   width: 100%;
@@ -974,6 +1060,8 @@ main {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .aboutPage .text {
   font-size: 25px;
@@ -1093,6 +1181,8 @@ main {
   width: 100%;
   flex-direction: column;
   align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .contactPage .contactTitle {
   text-align: center;
@@ -1123,6 +1213,64 @@ main {
   flex-direction: column;
   gap: 10px;
   font-size: 25px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.successModal {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  width: 600px;
+}
+.successModal .successModalControl {
+  width: 100%;
+  text-align: right;
+}
+.successModal .successModalControl .closeSuccessModal {
+  font-size: 30px;
+  cursor: pointer;
+}
+.successModal .successInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  z-index: 9999;
+}
+#toast-container .toast {
+  background: #a3ebb1;
+  color: #18a558;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.35s ease;
+}
+#toast-container .toast.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media screen and (max-width: 1200px) {
@@ -1156,6 +1304,15 @@ main {
   .bannerBlock img {
     width: 30% !important;
   }
+  .productBtn {
+    width: 100%;
+  }
+  .catalogFilter-modal {
+    width: 250px;
+  }
+  .productPrieview {
+    margin: 10px;
+  }
 }
 @media (min-width: 1200px) {
   .headerMenu {
@@ -1187,6 +1344,30 @@ main {
     text-align: center;
     font-size: 40px !important;
   }
+  .catalog {
+    gap: 20px !important;
+  }
+  .productCard {
+    width: 47% !important;
+  }
+  .cartMain {
+    flex-direction: column !important;
+  }
+  .cartMain .cartInfo {
+    height: auto;
+    width: 100%;
+  }
+  .productPrieview {
+    gap: 20px !important;
+    flex-direction: column !important;
+  }
+  .productTable {
+    max-width: 800px;
+    width: 100% !important;
+  }
+  .productMainInfo {
+    gap: 10px;
+  }
 }
 @media (max-width: 768px) {
   .searchInput {
@@ -1215,6 +1396,64 @@ main {
   .bannerBlock img {
     width: 100% !important;
   }
+  .reviewTitle {
+    font-size: 40px !important;
+    text-align: center;
+  }
+  .loginModal {
+    max-width: 400px;
+  }
+  .reviewModal {
+    max-width: 400px !important;
+    width: 100% !important;
+    margin: 10px;
+  }
+  .catalog {
+    width: 100%;
+  }
+  .filterBtn {
+    display: block !important;
+  }
+  .catalogFilter-modal {
+    background: white;
+    padding: 20px;
+    z-index: 1000;
+    width: 100%;
+    max-width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+  }
+  .catalogFilter-modal .catalogFilter {
+    box-shadow: 0 0 0 0;
+    width: 100%;
+  }
+  .catalogFilter-modal.unactive {
+    display: none !important;
+  }
+  .catalogFilter-modal .filterModalControl {
+    width: 100%;
+    text-align: right;
+    display: block !important;
+  }
+  .catalogFilter-modal .filterModalControl .closeFilterModal {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .descriptionText {
+    max-width: 700px;
+    width: 100% !important;
+  }
+  .productPrieview {
+    align-items: center;
+  }
+  .productPrieview img {
+    max-width: 200px;
+    max-height: 300px;
+  }
 }
 @media (max-width: 576px) {
   #header {
@@ -1233,5 +1472,50 @@ main {
   }
   .welcomeTitle {
     font-size: 40px !important;
+  }
+  .products {
+    gap: 5px !important;
+  }
+  .products .productCard {
+    width: 47% !important;
+  }
+  .registerTitle {
+    font-size: 40px !important;
+    text-align: center;
+  }
+  .registerInfo {
+    max-width: 500px;
+    width: 100% !important;
+  }
+  .cartProductContainer {
+    max-width: 500px;
+    width: 100% !important;
+  }
+  .cartProductTools {
+    flex-direction: column !important;
+  }
+  .cartProductInfo {
+    gap: 10px;
+  }
+  .cartProduct {
+    max-height: 200px !important;
+    gap: 5px !important;
+  }
+  #orderModalOverlay {
+    overflow: auto;
+  }
+  .orderModal {
+    overflow: auto;
+    height: 100%;
+  }
+  .productNameAndBrand {
+    max-width: 400px;
+    width: 100% !important;
+  }
+  .faqTitle {
+    font-size: 40px !important;
+  }
+  .faqQuestion {
+    font-size: 20px !important;
   }
 }/*# sourceMappingURL=style.css.map */

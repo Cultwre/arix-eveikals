@@ -1,15 +1,33 @@
 const reviewButton = document.querySelector(`.reviewButton`);
+const successButton = document.querySelector(`.successOk`);
 const reviewModalOverlay = document.querySelector(`#reviewModalOverlay`);
+const successModalOverlay = document.querySelector(`#successModalOverlay`);
 const closeReviewModal = document.querySelector(`.closeReviewModal`);
+const closeSuccessModal = document.querySelector(`.closeSuccessModal`);
 const reviewForm = document.querySelector(`#reviewForm`);
+const reviewModal = document.querySelector(`.reviewModal`);
+const successModal = document.querySelector(`.successModal`);
 
+// Jautājuma modāla loga aiveršana un atvēršana
 reviewButton.addEventListener("click", () => {
   reviewModalOverlay.classList.remove("hidden");
+  reviewModal.classList.remove("in-view");
   document.body.classList.add("modal-active");
 });
 
 closeReviewModal.addEventListener("click", () => {
   reviewModalOverlay.classList.add("hidden");
+  document.body.classList.remove("modal-active");
+});
+
+// Veiksmes modāla loga aizveršana
+closeSuccessModal.addEventListener("click", () => {
+  successModalOverlay.classList.add("hidden");
+  document.body.classList.remove("modal-active");
+});
+
+successButton.addEventListener("click", () => {
+  successModalOverlay.classList.add("hidden");
   document.body.classList.remove("modal-active");
 });
 
@@ -24,6 +42,7 @@ reviewForm.addEventListener("submit", (e) => {
   const email = reviewForm.reviewEmail.value.trim();
   const text = reviewForm.reviewText.value.trim();
 
+  // Validācija
   if (email === "" || !email.includes("@")) {
     reviewForm.reviewEmail.style.backgroundColor = "#fff";
     showError("reviewEmail", "Lūdzu ievadi derīgu e-pastu");
@@ -47,9 +66,13 @@ reviewForm.addEventListener("submit", (e) => {
 
     reviewModalOverlay.classList.add("hidden");
     document.body.classList.remove("modal-active");
+
+    successModalOverlay.classList.remove("hidden");
+    successModal.classList.remove("in-view");
   }
 });
 
+// Funkcija kļūdu parādīšanai
 function showError(fieldName, message) {
   const field = reviewForm.querySelector(`[name="${fieldName}"]`);
   const errorElement = field
